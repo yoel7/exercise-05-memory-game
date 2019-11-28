@@ -16,3 +16,7 @@ If you finish the exercise you can request to add your repo here [add a finished
 
 ## Extra hard
 - The game should be saved to local storage and when the player exit and retunrs he keep play from the same point he left.
+
+
+## Visual example
+![Memory game visual example](memory-game.gif "Memory game visual example")
