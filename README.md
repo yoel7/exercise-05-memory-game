@@ -1,4 +1,6 @@
 # exercise-05-memory-game
+Fork this project to start the exercise.
+
 This exercise is part of exercises repository found AT https://github.com/kob-e/exercises
 
 If you finish the exercise you can request to add your repo here [add a finished project](https://github.com/kob-e/exercises/issues/new?assignees=kob-e&labels=Add+a+project+to+hall+of+fame&template=add-a-finished-project.md&title=i+want+to+add+my+proejct+05+memory+game+to+hall+of+fame)
