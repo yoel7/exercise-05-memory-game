@@ -1,5 +1,5 @@
-document.querySelector('#h1').addEventListener('click',click1);
-a1= document.querySelector('.a,b1');console.log(a1);
+// document.querySelector('#h1').addEventListener('click',click1);
+// a1= document.querySelector('.a,b1');console.log(a1);
 arr=[];
 switchB=false;
 arrBool=[];
@@ -14,32 +14,32 @@ function crGame(p){
            arr[a-1][b-1]=`a=${a},b=${b}`
             arrBool[a-1][b-1]=false;
             document.querySelector("#a"+a+"").innerHTML+=`
-            <img id="a${a}${b}" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/${b}.png'><//img>`;
-            // document.querySelector("#"+a+b+"").innerHTML="<div>vvv</div>"
-
+            <img  id="a${a}${b}v" onclick="click1("a${a}${b}")" style="display: inline-block; width: 50px;height: 50px;" src='images/${b}.png'><//img>
+            <img  id="a${a}${b}b" onclick="click1("a${a}${b}")" style="display: none; width: 50px;height: 50px;" src='images/blank.png'><//img>
+            `;
         }
     }
 }
 function click1(e){
-    console.log(e);
-    console.dir(e.target.v);
-    // switchB=!switchB;
+    // console.log(e);
+    // console.dir(e.target.value);
+    switchB=!switchB;
     
-    // if (switchB){
-    //     document.querySelector("#"+e+"").innerHTML=`
-    //     <img id="44" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/4.png'><//img>`;
+    if (switchB){
+        // document.querySelector("#"+e+"").innerHTML=`
+        // <img id="44" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/4.png'><//img>`;
        
-    // // document.querySelector("#b").style.display="inline-block";
-    // // document.querySelector("#v").style.display="none";
+    document.querySelector("#"+e+"b").style.display="inline-block";
+    document.querySelector("#"+e+"v").style.display="none";
     
-    // } else{
-    //     document.querySelector("#"+e+"").innerHTML=`
-    //     <img id="44" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/blank.png'><//img>`;
+    } else{
+        document.querySelector("#"+e+"").innerHTML=`
+        <img id="44" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/blank.png'><//img>`;
        
-    //     // document.querySelector("#b").style.display="none";
-    //     // document.querySelector("#v").style.display="inline-block";
+        // document.querySelector("#b").style.display="none";
+        // document.querySelector("#v").style.display="inline-block";
          
-    // }
+    }
 
 }
 
