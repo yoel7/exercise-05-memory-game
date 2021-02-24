@@ -54,7 +54,11 @@ function click1(e,pic,numImgP){
         document.querySelector("#"+e+"b").style.display="none";
         document.querySelector("#"+e+"img").style.display="inline-block";
         if (counterImg>1){
-            setTimeout(()=>{click1(e,'img');click1(strImgPR,'img');counterImg=0;},2*1000)
+            
+            // if (!(numImgPR==numImgP)){console.log('58');
+                 setTimeout(()=>{click1(e,'img');click1(strImgPR,'img');},2*1000)
+            // }
+            counterImg=0;
         }
     } else{
         // document.querySelector("#"+e+"").innerHTML=`
