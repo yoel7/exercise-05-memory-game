@@ -8,7 +8,8 @@ strImgPR='';
 // arrBool=[];
 function crGame(event){
     p = event.target.value;
-    if (!p) {document.querySelector('#game').innerHTML=''}
+    //    למען הסדר הטוב הוספתי ריטרן אבל לא היה צריך
+    if (!p) {document.querySelector('#game').innerHTML='';return}
     nam=p;
     p=p*2;
     for(let a=p;a>0;a--){
