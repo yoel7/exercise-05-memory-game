@@ -1,8 +1,10 @@
 // document.querySelector('#h1').addEventListener('click',click1);
 // a1= document.querySelector('.a,b1');console.log(a1);
 arr=[];
-switchB=false;
+// switchB=false;
 counterImg=0;
+numImgPR=0;
+strImgPR='';
 // arrBool=[];
 function crGame(p){
     nam=p;
@@ -32,20 +34,28 @@ function crGame(p){
            numImg=arr[a-1][b-1]
             // arrBool[a-1][b-1]=false;
             document.querySelector("#a"+a+"").innerHTML+=`
-            <img  id="a${a}${b}img" onclick="click1('a${a}${b}','img')" style="display: none; width: 50px;height: 50px;" src='images/${numImg}.png'><//img>
-            <img  id="a${a}${b}b" onclick="click1('a${a}${b}','b')" style="display:inline-block ; width: 50px;height: 50px;" src='images/blank.png'><//img>
+            <img  id="a${a}${b}img" onclick="click1('a${a}${b}','img',numImg)" style="display: none; width: 50px;height: 50px;" src='images/${numImg}.png'><//img>
+            <img  id="a${a}${b}b" onclick="click1('a${a}${b}','b',numImg)" style="display:inline-block ; width: 50px;height: 50px;" src='images/blank.png'><//img>
             `;
         }
     }
 }
-function click1(e,pic){
+function click1(e,pic,numImgP){
     // console.log(e);
     // console.dir(e.target.value);
-    switchB=!switchB;
+    // switchB=!switchB;
+    
     if (pic=='b'){
-    document.querySelector("#"+e+"b").style.display="none";
-    document.querySelector("#"+e+"img").style.display="inline-block";
-    setTimeout(()=>click1(e,'img'),2*1000)
+        counterImg++;
+        if (counterImg==1){
+            numImgPR=numImgP;
+            strImgPR=e;
+        }
+        document.querySelector("#"+e+"b").style.display="none";
+        document.querySelector("#"+e+"img").style.display="inline-block";
+        if (counterImg>1){
+            setTimeout(()=>{click1(e,'img');click1(strImgPR,'img');counterImg=0;},2*1000)
+        }
     } else{
         // document.querySelector("#"+e+"").innerHTML=`
         // <img id="44" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/blank.png'><//img>`;
