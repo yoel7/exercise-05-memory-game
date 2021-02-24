@@ -24,7 +24,8 @@ function crGame(p){
             // document.querySelector("#aa"+a+"").innerHTML+=`
             // <img id="${a}${b}" style="display: inline-block; width: 50px;height: 50px;" src='images/${b}.png'><//img>`
             document.querySelector("#a"+a+"").innerHTML+=`
-            <img id="${a}${b}" onclick="click()" style="display: inline-block; width: 50px;height: 50px;" src='images/${b}.png'><//img>`
+            <img id="${a}${b}"  style="display: inline-block; width: 50px;height: 50px;" src='images/${b}.png'><//img>`;
+            // document.querySelector("#"+a+b+"").innerHTML="<div>vvv</div>"
 
         }
     }
