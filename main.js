@@ -29,7 +29,7 @@ function crGame(p){
         //    arr[a-1][b-1]=`a=${a},b=${b}`
         //    arr[a-1][b-1]=5
            numImg=arr[a-1][b-1]
-            arrBool[a-1][b-1]=false;
+            // arrBool[a-1][b-1]=false;
             document.querySelector("#a"+a+"").innerHTML+=`
             <img  id="a${a}${b}img" onclick="click1('a${a}${b}')" style="display: inline-block; width: 50px;height: 50px;" src='images/${numImg}.png'><//img>
             <img  id="a${a}${b}b" onclick="click1('a${a}${b}')" style="display: none; width: 50px;height: 50px;" src='images/blank.png'><//img>
