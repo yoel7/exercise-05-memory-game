@@ -1,4 +1,4 @@
-document.querySelector('#button').addEventListener('click',click)
+document.querySelector('#h1').addEventListener('click',click)
 arr=[];
 switchB=false;
 arrBool=[];
@@ -46,4 +46,4 @@ function click(){
 
 }
 
-crGame(5)
+crGame(2)
