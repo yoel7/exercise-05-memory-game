@@ -6,7 +6,9 @@ counterImg=0;
 numImgPR=0;
 strImgPR='';
 // arrBool=[];
-function crGame(p){
+function crGame(event){
+    p = event.target.value;
+    if (!p) {document.querySelector('#game').innerHTML=''}
     nam=p;
     p=p*2;
     for(let a=p;a>0;a--){
@@ -34,8 +36,8 @@ function crGame(p){
            numImg=arr[a-1][b-1]
             // arrBool[a-1][b-1]=false;
             document.querySelector("#a"+a+"").innerHTML+=`
-            <img  id="a${a}${b}img" onclick="click1('a${a}${b}','img',numImg)" style="display: none; width: 50px;height: 50px;" src='images/${numImg}.png'><//img>
-            <img  id="a${a}${b}b" onclick="click1('a${a}${b}','b',numImg)" style="display:inline-block ; width: 50px;height: 50px;" src='images/blank.png'><//img>
+            <img  id="a${a}${b}img" onclick="click1('a${a}${b}','img',${numImg})" style="display: none; width: 50px;height: 50px;" src='images/${numImg}.png'><//img>
+            <img  id="a${a}${b}b" onclick="click1('a${a}${b}','b',${numImg})" style="display:inline-block ; width: 50px;height: 50px;" src='images/blank.png'><//img>
             `;
         }
     }
@@ -45,20 +47,23 @@ function click1(e,pic,numImgP){
     // console.dir(e.target.value);
     // switchB=!switchB;
     
-    if (pic=='b'){
+    if (pic=='b')
+    {
         counterImg++;
-        if (counterImg==1){
+        if (counterImg==1)
+        {
             numImgPR=numImgP;
             strImgPR=e;
         }
         document.querySelector("#"+e+"b").style.display="none";
         document.querySelector("#"+e+"img").style.display="inline-block";
-        if (counterImg>1){
+        if (counterImg>1)
+        {
+            counterImg=0; 
+            if (numImgPR!=numImgP){console.log(' numImgPR',numImgPR,numImgP);
+                 setTimeout(()=>{click1(e,'img');click1(strImgPR,'img');},1*1000)
+            }
             
-            // if (!(numImgPR==numImgP)){console.log('58');
-                 setTimeout(()=>{click1(e,'img');click1(strImgPR,'img');},2*1000)
-            // }
-            counterImg=0;
         }
     } else{
         // document.querySelector("#"+e+"").innerHTML=`
@@ -83,4 +88,4 @@ function click1(e,pic,numImgP){
 //     //     }
 //     // }
 // }
-crGame(2)
+// crGame(2)
