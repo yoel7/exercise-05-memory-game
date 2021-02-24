@@ -11,37 +11,35 @@ function crGame(p){
         arrBool[a-1]=[];
         document.querySelector('#game').innerHTML+=`<div id="a${a}"></div>`;
         for(let b=p;b>0;b--){
-          /*  for(let b=p;b>0;b--){
-                arr[a-1][b-1]='';
-                if (b%2==0){
-                    randNumImg = Math.floor(Math.random() * 10);
-                    arr[a-1][b-1]=randNumImg;
-                }
-            }
-            */
            arr[a-1][b-1]=`a=${a},b=${b}`
             arrBool[a-1][b-1]=false;
             document.querySelector("#a"+a+"").innerHTML+=`
-            <img id="${a}${b}" onclick="click1()" style="display: inline-block; width: 50px;height: 50px;" src='images/${b}.png'><//img>`;
+            <img id="a${a}${b}" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/${b}.png'><//img>`;
             // document.querySelector("#"+a+b+"").innerHTML="<div>vvv</div>"
 
         }
     }
-    console.log(arr);
 }
-function click1(){
-    switchB=!switchB;
+function click1(e){
+    console.log(e);
+    console.dir(e.target.v);
+    // switchB=!switchB;
     
-    if (switchB){
-        console.log("if",switchB);
-    document.querySelector("#b").style.display="inline-block";
-    document.querySelector("#v").style.display="none";
-    // setAttribute("style", "display: inline-block;");
-    } else{
-        document.querySelector("#b").style.display="none";
-        document.querySelector("#v").style.display="inline-block";
+    // if (switchB){
+    //     document.querySelector("#"+e+"").innerHTML=`
+    //     <img id="44" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/4.png'><//img>`;
+       
+    // // document.querySelector("#b").style.display="inline-block";
+    // // document.querySelector("#v").style.display="none";
+    
+    // } else{
+    //     document.querySelector("#"+e+"").innerHTML=`
+    //     <img id="44" onclick="click1(event.target.attributes.id.nodeValue)" style="display: inline-block; width: 50px;height: 50px;" src='images/blank.png'><//img>`;
+       
+    //     // document.querySelector("#b").style.display="none";
+    //     // document.querySelector("#v").style.display="inline-block";
          
-    }
+    // }
 
 }
 
